@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+    <head>
+       <meta charset="utf-8">
+        <title>캐릭터 관계도 그리기</title>
+        <script src="relation.js"></script>
+        <script src="charactor.js"></script>
+        <script src="script.js"></script>
+        <script src="tab.js"></script>
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <body onload="init()">
+       <div class="buttons">
+           <button onclick="connect()">잇기</button>
+           <button onclick="movePage()">화면 이동</button>
+           <button onclick="move()">이동</button>
+        </div>
+        <div id="state">이동</div>
+        <hr>
+        <div class="loader-tap">
+            <div class="container">
+             <div class="menu">
+                  <ul class="tabs">
+                      <li class="tab-link current" data-tab="tab-1">캐릭터</li>
+                      <li class="tab-link" data-tab="tab-2">관계</li>
+                      <li class="tab-link" data-tab="tab-4">전역설정</li>
+                  </ul>
+                </div>
+              <div id="tab-1" class="tab-content current">
+              </div>
+              <div id="tab-2" class="tab-content">
+              </div>
+              <div id="tab-4" class="tab-content">
+               <span>
+                   관계 설정:
+                    <select id="relation">
+                        <option value="">관계</option>
+                    </select>
+                </span>
+                <span>
+                   기본 사이즈:
+                    <input type="text" id="size">
+                </span>
+                <span>
+                   기본 폰트 : 
+                    <input type="text" id="font">
+                </span>
+              </div>
+            </div>
+            <div class="main">
+                <canvas id="main"></canvas>
+            </div>
+        </div>
+    </body>
+</html>
