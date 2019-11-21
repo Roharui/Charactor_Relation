@@ -84,19 +84,19 @@ function up_canvas(e){
     
     if(current_rel.color == null){
         ch_rels = ch_rels.filter(function(x){
-        return (x.start.id != sch.id) && (x.target.id != ch.id)
+        return (x.start != sch.id) && (x.target != ch.id)
         })
     }
     else{
         ch_rels.forEach(function(x){
-            if(x.start.id == sch.id && x.target.id == ch.id){
+            if(x.start == sch.id && x.target == ch.id){
                 x.rel = current_rel
                 tf = false
             }
         })
     
         if(tf){
-            ch_rels.push({start:sch, target:ch, rel:current_rel})
+            ch_rels.push({start:sch.id, target:ch.id, rel:current_rel})
         }
     }
     sch = null
@@ -224,7 +224,7 @@ function removeChar(ch){
     })
     
     ch_rels = ch_rels.filter(function(x){
-        return (x.start.id != ch.id) && (x.target.id != ch.id)
+        return (x.start != ch.id) && (x.target != ch.id)
     })
         
 }
