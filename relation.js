@@ -117,9 +117,9 @@ function ToRelation(obj)
     
     this.choose = false
     
-    this.detail = function(){
+    this.detail =  function(){
         var dt = document.createElement("details")
-        dt.id = "char-" + this.id
+        dt.id = "char-" + obj.id
     
         let name = document.createElement("summary")
         
@@ -198,7 +198,7 @@ function ToRelation(obj)
         dt.append(remove)
         
         return dt
-    }
+}
     
     this.select = function(){
         rels.forEach(function(x){
@@ -223,7 +223,6 @@ function init_relation()
     
     updateRels()
 }
-
 
 function addrelation(){
     

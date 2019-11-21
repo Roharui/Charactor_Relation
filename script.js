@@ -80,16 +80,17 @@ function up_canvas(e){
     
     var ch = selectChar(loc)
     
-    if(ch == null || ch.id == sch.id){return}
+    if(ch == null || sch == null || ch.id == sch.id ){return}
     
     if(current_rel.color == null){
         ch_rels = ch_rels.filter(function(x){
-        return (x.start != sch.id) && (x.target != ch.id)
+            return (x.start != sch.id) || (x.target != ch.id)
         })
     }
     else{
         ch_rels.forEach(function(x){
             if(x.start == sch.id && x.target == ch.id){
+                console.log(x)
                 x.rel = current_rel
                 tf = false
             }
